@@ -1,0 +1,175 @@
+//Week 2 - exercise 1
+
+Dog.java
+class Dog
+{	
+    public Dog(String dogName)
+    {
+        System.out.println("Hey, my name is " + dogName + "!");
+    }
+    public void Speak(String sentence) { 
+		System.out.println(sentence + "!"); 
+	}
+}
+
+Mainclass.java
+class Mainclass {
+		public static void main(String[] args){
+    Dog rekku = new Dog("Rekku");
+	Dog musti = new Dog("Musti");
+			rekku.Speak("Hau");
+	musti.Speak("Vuh");
+    
+	}
+}
+
+//Week 2 - exercise 2
+
+class Dog
+{  
+  private String dogName;
+  
+    public Dog(String dogName)
+    {
+    this.dogName = dogName;
+        System.out.println("Hey, my name is " + dogName + "!");
+    }
+    public void speak(String sentence) { 
+    System.out.println(dogName +": " sentence + "!"); 
+  }
+}
+
+class Mainclass {
+	public static void main(String[] args){
+    	Dog rekku = new Dog("Rekku");
+		Dog musti = new Dog("Musti");
+		rekku.speak("Hau");
+		musti.speak("Vuh");
+	}
+}
+
+//Week 2 – exercise 3
+
+import java.util.Scanner;
+
+class Mainclass {
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System. in);
+		System.out.print("Give a name to the dog: ");
+		String name = input.nextLine();
+    	Dog dog = new Dog(name);
+		
+		System.out.print("What does a dog say: ");
+		String sentence = input.nextLine();
+		
+		dog.speak(sentence);
+	}
+}
+
+class Dog{
+  private String dogName;
+  
+    public Dog(String dogName)
+    {
+    this.dogName = dogName;
+        System.out.println("Hey, my name is " + dogName + "!");
+    }
+    public void speak(String sentence) { 
+    System.out.println(dogName +": " + sentence); 
+  }
+}
+
+//Week 2 – exercise 4
+
+import java.util.Scanner;
+
+class Mainclass {
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System. in);
+		System.out.print("Give a name to the dog: ");
+		String name = input.nextLine();
+    	Dog dog = new Dog(name);
+		
+		System.out.print("What does a dog say: ");
+		String sentence = input.nextLine();
+		dog.speak(sentence);
+		while (sentence == null || sentence.trim().isEmpty()) {
+			System.out.print("What does a dog say: ");
+			sentence = input.nextLine();
+			dog.speak(sentence);
+		}
+	}
+}
+
+class Dog{
+  private String dogName;
+  
+    public Dog(String dogName)
+    {
+		if(dogName == null || dogName.trim().isEmpty()){
+			dogName = "Doge";
+		}
+    this.dogName = dogName;
+        System.out.println("Hey, my name is " + dogName + "!");
+    }
+    public void speak(String sentence) { 
+				if(sentence == null || sentence.trim().isEmpty()){
+			sentence = "Much wow!";
+		}
+    System.out.println(dogName +": " + sentence.trim()); 
+  }
+}
+
+
+//Week 2 – exercise 5
+
+class Dog{
+  private String dogName;
+  
+    public Dog(String dogName)
+	{
+    	this.dogName = dogName;
+        System.out.println("Hey, my name is " + dogName);
+    }
+    public void speak(String sentence) {
+		String[] splited = sentence.split(" ");
+		for (String s: splited) {           
+			if(isInteger(s)){
+				System.out.println("Such integer: " + s);
+			}else if(s.equalsIgnoreCase("true")||s.equalsIgnoreCase("false")){
+				System.out.println("Such boolean: " + s);
+			}else{
+				System.out.println(s);
+			}
+		}
+  	}
+	
+	public static boolean isInteger(String s) {
+    try { 
+		Integer.parseInt(s); 
+		} catch(NumberFormatException e) { 
+			return false; 
+		} catch(NullPointerException e) {
+			return false;
+		}
+		return true;
+	}
+}
+
+import java.util.Scanner;
+
+class Mainclass {
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System. in);
+		System.out.print("Give a name to the dog: ");
+		String name = input.nextLine();
+    	Dog dog = new Dog(name);
+		
+		System.out.print("What does a dog say: ");
+		String sentence = input.nextLine();
+		dog.speak(sentence);
+	}
+}
